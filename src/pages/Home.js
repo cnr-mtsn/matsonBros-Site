@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import tanBg from "../media/tanBackgroundMobile.svg";
 import logo from "../media/homeBackgroundMobile.svg";
 import { device } from "../utils/device";
-import { PageWrapper } from "../utils/style";
+import { PageWrapper, theme } from "../utils/style";
 
 const Container = styled.div`
 	background: url(${tanBg});
@@ -48,7 +48,7 @@ const Container = styled.div`
 	}
 	h4 {
 		margin: 0 0 0 0.5rem;
-		color: ${props => props.theme.colors.orange};
+		color: ${theme.colors.orange};
 		font-family: "handWriting";
 		@media ${device.tablet} {
 			font-size: 1.5rem;
@@ -76,8 +76,8 @@ const Container = styled.div`
 		margin: 0;
 
 		#learn-more {
-			background: ${props => props.theme.colors.orange};
-			color: ${props => props.theme.colors.white};
+			background: ${theme.colors.orange};
+			color: ${theme.colors.white};
 			text-transform: uppercase;
 			font-size: 0.7rem;
 			font-weight: bold;
@@ -95,12 +95,12 @@ const Container = styled.div`
 			padding: 0.3rem;
 			text-transform: uppercase;
 			font-size: 0.5rem;
-			color: ${props => props.theme.colors.blue};
+			color: ${theme.colors.blue};
 			font-weight: bold;
 			border: none;
 			z-index: 2;
 			border-radius: 10px;
-			background: ${props => props.theme.colors.offWhite};
+			background: ${theme.colors.offWhite};
 			@media ${device.tablet} {
 				font-size: 0.6rem;
 			}
