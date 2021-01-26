@@ -1,26 +1,26 @@
-import * as React from "react"
+import * as React from "react";
 import { Router } from "@reach/router";
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "styled-components";
-import Home from "./pages/Home";
-import { theme, GlobalStyle } from "./utils/style";
-import Nav from "./components/Nav";
 
-function App() {
+/***** local imports *****/
+import { theme, GlobalStyle } from "../utils/style";
+import Home from "../pages/Home";
+import Contact from "../pages/Contact";
+import "../App.css";
 
-
+function Index() {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<Nav navOpen={true} />
-			<AnimatePresence location={location} key={location.pathname}>
+			<AnimatePresence>
 				<Router>
-					<Route path="/" exact component={Home} />
+					<Home path="/" exact />
+					<Contact path="/contact" />
 				</Router>
 			</AnimatePresence>
 		</ThemeProvider>
 	);
 }
 
-
-export default IndexPage
+export default Index;

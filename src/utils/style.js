@@ -1,4 +1,7 @@
+import React from 'react';
 import { createGlobalStyle } from "styled-components";
+import Nav from '../components/Nav';
+import styled from 'styled-components';
 
 const theme = {
   colors: {
@@ -12,9 +15,9 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
-html {
-  font-size: 18px;
-}
+  html {
+    font-size: 18px;
+  }
   body  {
     margin: 0;
     position: absolute;
@@ -37,7 +40,6 @@ html {
     margin: 0;
     left: 0;
     right: 0;
-
   }
 
   footer {
@@ -45,7 +47,19 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-}
+  }
 `;
+const StyledPageWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
+const PageWrapper = ({ children }) => (
+	<StyledPageWrapper>
+		<Nav />
+		{children}
+	</StyledPageWrapper>
+);
 
-export { theme, GlobalStyle };
+export { theme, GlobalStyle, PageWrapper };
